@@ -1,36 +1,29 @@
+# Deprecated: see https://github.com/FNNDSC/miniChRIS-k8s
+
+This project is succeeded by [_miniChRIS-k8s_](https://github.com/FNNDSC/miniChRIS-k8s/),
+which supports Podman via `podman kube play`.
+
 # ![ChRIS logo](https://raw.githubusercontent.com/FNNDSC/ChRIS_ultron_backEnd/master/docs/assets/logo_chris.png) miniChRIS-podman
 
-[![CI badge](https://github.com/FNNDSC/miniChRIS-podman/workflows/CI/badge.svg)](https://github.com/FNNDSC/miniChRIS-podman/actions?query=workflow%3ACI)
-[![MIT license](https://img.shields.io/github/license/FNNDSC/miniChRIS-podman)](LICENSE)
+[![CI badge](https://github.com/FNNDSC/miniChRIS-podman-compose/workflows/CI/badge.svg)](https://github.com/FNNDSC/miniChRIS-podman-compose/actions?query=workflow%3ACI)
+[![MIT license](https://img.shields.io/github/license/FNNDSC/miniChRIS-podman-compose)](LICENSE)
 
 Run [_ChRIS_](https://chrisproject.org/) using [Podman](https://podman.io).
 
-## Abstract
+## Project Goals
 
-_miniChRIS-podman_ is a fork of [_miniChRIS-docker_](https://github.com/FNNDSC/miniChRIS-docker)
-which uses Podman instead of Docker.
-See
-[miniChRIS-docker/README.md](https://github.com/FNNDSC/miniChRIS-docker#readme) for more info.
+_miniChRIS-podman-compose_ provides a single YAML file which can be read by `podman-compose` to run all of _ChRIS_.
 
 Image tags are pinned to stable versions, so _miniChRIS_ might be
 out-of-date with development versions of _ChRIS_ components.
+To run _ChRIS_ components in development mode, see their respective Github repositories.
 
-_miniChRIS-podman_ is not suitable as a development environment
-for the _ChRIS_ services themselves, please see their respective
-respositories for information on how to run them in development mode.
-
-### _miniChRIS-podman_ Project Goals
-
-- Support for rootless Podman :white_check_mark:
-- Support Podman with minimal dependencies, i.e. without container networking (WIP, HELP WANTED)
-- Legible, minimal bash scripts to be run on system. Put whatever we can into containers!
-- Feature parity with _miniChRIS-docker_
+See also: https://github.com/FNNDSC/miniChRIS-docker
 
 ### System Requirements
 
-- Python 3.8 or above
-- Rootless Podman version 3 or version 4
-- podman-dnsname (name resolution for containers)
+_miniChRIS-podman-compose_ requires Podman version 3 or 4.
+We aim to support "out-of-the-box" setups of rootless Podman.
 
 On Arch Linux, please consult the wiki: https://wiki.archlinux.org/title/Podman
 
@@ -127,7 +120,7 @@ For details, see https://github.com/FNNDSC/chrisomatic#plugins-and-pipelines
 ### Performance
 
 `./minichris.sh` takes ~60 seconds on a decent laptop (quad-core, 16 GB, SSD)
-and takes ~3 minutes in [Github Actions' Ubuntu VMs](https://github.com/FNNDSC/miniChRIS-podman/actions).
+and takes ~3 minutes in [Github Actions' Ubuntu VMs](https://github.com/FNNDSC/miniChRIS-podman-compose/actions).
 It is strongly recommended that you use an SSD!
 
 ### podman-compose Issues to Watch
