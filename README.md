@@ -1,4 +1,4 @@
-# Deprecated: see https://github.com/FNNDSC/miniChRIS-k8s
+# Deprecated: see https://github.com/FNNDSC/miniChRIS-podman
 
 This project is succeeded by [_miniChRIS-k8s_](https://github.com/FNNDSC/miniChRIS-k8s/),
 which supports Podman via `podman kube play`.
